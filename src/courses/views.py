@@ -25,7 +25,7 @@ class LessonDetailView(View):
 				lesson = lesson_qs.first()
 
 			user_membership = UserMembership.objects.filter(user=request.user).first()
-			user_membership_type = user_membership.membership.user_membership_type
+			user_membership_type = user_membership.membership.membership_type
 
 			course_allowed_mem_types = course.allowed_memberships.all()  #must say .all because allowed_membership is a many to many field
 
